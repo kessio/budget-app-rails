@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @group_expenses = Expense.all
+    @expenses = Expense.all
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -12,7 +12,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @group_expense = Expense.new
+    @expense = Expense.new
+    @group = Group.find(params[:group_id])
   end
 
   # GET /expenses/1/edit
@@ -21,22 +22,25 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
-    @group_expense = Expense.new(expense_params)
+    @group = Group.find(params[:group_id])
+    @expense = Expense.new(expense_params)
 
     respond_to do |format|
-      if @group_expense.save
-        format.html { redirect_to group_expenses_url(@group_expense), notice: "Expense was successfully created." }
-        format.json { render :show, status: :created, location: @group_expense }
+      if @expense.save
+        category_expense = GroupExpense.new(group_id: params[:group_id], expense_id: @expense.id)
+        category_expense.save
+        format.html { redirect_to group_expenses_url(@expense), notice: "Expense was successfully created." }
+        format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @group_expense.errors, status: :unprocessable_entity }
+        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /expenses/1 or /expenses/1.json
   def destroy
-    @group_expense.destroy
+    @expense.destroy
 
     respond_to do |format|
       format.html { redirect_to group_expenses_url, notice: "Expense was successfully destroyed." }
@@ -47,7 +51,7 @@ class ExpensesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions
     def set_expense
-      @group_expense = Expense.find(params[:id])
+      @expense = Expense.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

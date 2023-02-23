@@ -3,15 +3,15 @@
 <h1>Expenses</h1>
 
 <div id="expenses">
-  <% @group_expenses.each do |group_expense| %>
+  <% @expenses.each do |expense| %>
     <p>
     <strong>Name:</strong>
-    <%= group_expense.name %>
+    <%= expense.name %>
   </p>
 
   <p>
     <strong>Amount:</strong>
-    <%= group_expense.amount %>
+    <%= expense.amount %>
   </p>
 
    
