@@ -5,4 +5,8 @@ class Group < ApplicationRecord
 
     validates :name, presence: true
     validates :icon, presence: true
+
+    def latest_expenses
+        expenses.order(created_at: :desc)
+      end
 end

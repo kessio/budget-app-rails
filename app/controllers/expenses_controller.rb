@@ -3,7 +3,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+      @group = Group.includes(:expenses).find(params[:group_id])
+      @expenses = @group.latest_expenses
   end
 
   # GET /expenses/1 or /expenses/1.json
