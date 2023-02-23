@@ -4,9 +4,18 @@
 
 <div id="expenses">
   <% @group_expenses.each do |group_expense| %>
-    <%= render expense %>
     <p>
-      <%= link_to "Show this expense", group_expense %>
+    <strong>Name:</strong>
+    <%= group_expense.name %>
+  </p>
+
+  <p>
+    <strong>Amount:</strong>
+    <%= group_expense.amount %>
+  </p>
+
+    <p>
+      <%= link_to "Show this expense", group_expense_path %>
     </p>
   <% end %>
 </div>

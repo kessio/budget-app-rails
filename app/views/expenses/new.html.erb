@@ -1,9 +1,25 @@
 <h1>New expense</h1>
 
-<%= render "form", expense: @expense %>
+<%= form_with model: @group_expense, url: group_expenses_url, method: :post do |form| %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
 
 <br>
 
 <div>
-  <%= link_to "Back to expenses", expenses_path %>
+  <%= link_to "Back to expenses", group_expenses_path %>
 </div>
