@@ -1,1 +1,1 @@
-json.array! @expenses, partial: "expenses/expense", as: :expense
+json.array! @group_expenses, partial: "expenses/expense", as: :group_expense

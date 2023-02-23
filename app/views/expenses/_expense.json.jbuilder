@@ -1,2 +1,2 @@
-json.extract! expense, :id, :name, :amount, :created_at, :updated_at
-json.url expense_url(expense, format: :json)
+json.extract! group_expense, :id, :name, :amount, :created_at, :updated_at
+json.url group_expense_url(group_expense, format: :json)
