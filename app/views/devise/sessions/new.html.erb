@@ -1,14 +1,17 @@
-<h2>Log in</h2>
-
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+  <%= image_tag 'back.png', alt: "back-arrow"%>
+  <h4 class="text-white p-2">LOGIN</h4>
+  <h6 class="text-white p-2">Log in</h6>
+</nav>
+<div class="mt-5">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field mt-3">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control py-3", placeholder: "Email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control py-3",
+        placeholder: "Password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -17,10 +20,15 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "btn btn-primary btn-lg mt-3" %>
   </div>
 <% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<div class="mt-5">
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class: "ml-5" %><br />
+<% end %>
+</div>
+
