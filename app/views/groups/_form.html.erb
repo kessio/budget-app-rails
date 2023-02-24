@@ -1,3 +1,4 @@
+<div class="container mt-5">
 <%= form_with(model: group) do |form| %>
   <% if group.errors.any? %>
     <div style="color: red">
@@ -12,16 +13,18 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "Name", class:"form-control py-3"%>
   </div>
 
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_area :icon %>
+    <%= form.select :icon, options_for_select([['Select Icon', ''], ['Bills 💵', 'bill.png'], ['Health 🏥', 'hospital.png'],
+    ['Shopping 🛍️', 'shopping-bag.png'], ['Sports ⚽', 'sports.png'], ['Entertainment 🍿', 'entertainment.png'], ['Travel ✈️', 'transport.png'],
+    ['Others 📓', 'others.png']], selected: nil), { prompt: 'Icons', size: 16 }, class: 'form-select mt-2 mb-4 py-3'%>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit "Save category", class: "btn btn-primary btn-lg mt-3" %>
   </div>
 <% end %>
+
+</div>
