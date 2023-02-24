@@ -9,4 +9,8 @@ class Group < ApplicationRecord
     def latest_expenses
         expenses.order(created_at: :desc)
       end
+
+      def total
+        expenses.sum(:amount)
+      end
 end
