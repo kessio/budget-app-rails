@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
 resources :categories, controller: 'groups', as: 'groups'  do
     resources :transactions, controller: 'expenses', as: 'expenses'
   end
@@ -14,5 +13,5 @@ resources :categories, controller: 'groups', as: 'groups'  do
       root 'home#index', as: :unauthenticated_user
     end
   end
-
+  root 'groups#index'
 end
