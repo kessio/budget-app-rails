@@ -1,25 +1,23 @@
-<h1>New expense</h1>
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+  <%= link_to image_tag('back.png', alt: "back-arrow"), group_expenses_path,  class: "px-2"%>
+  <h3 class="text-white p-3">Add Expense</h3>
+  <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white fw-bold text-decoration-none p-3" %>
+</nav>
 
+<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
 <%= form_with model: @expense, url: group_expenses_url, method: :post do |form| %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "Name", class:"form-control py-3 mt-3" %>
   </div>
 
   <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, placeholder: "Amount", class:"form-control py-3 mt-3" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Save Expense", class: "btn btn-primary btn-lg mt-3" %>
   </div>
 <% end %>
-
-
-<br>
-
-<div>
-  <%= link_to "Back to expenses", group_expenses_path %>
 </div>
