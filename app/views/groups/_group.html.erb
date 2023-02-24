@@ -1,5 +1,5 @@
 <div id="<%= dom_id group %>">
-<div class="col-12 bg-white py-4 d-flex flex-column px-2">
+<div class="col-12 bg-white py-4 d-flex flex-column px-2 mt-3">
  <div class="d-flex justify-content-between">
   <div class="">
     <%= image_tag 'food.png', alt: 'icon', class: "img" %>
@@ -14,9 +14,9 @@
  <div class="d-flex justify-content-between mt-3">
   <div class="text-black-50 fs-6"><%= group.created_at.strftime('%d %B, %Y') %></div>
   <div class=""><%= image_tag 'trash.png', alt: 'icon', size: '20x20' %></div>
+    <div><%= link_to "View", group_expenses_path(group.id) %></div>
   </div>
 
  </div>
-
 
 </div>

@@ -13,4 +13,5 @@ class Group < ApplicationRecord
       def total
         expenses.sum(:amount)
       end
+
 end

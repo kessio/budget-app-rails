@@ -15,12 +15,11 @@
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>
-    <p>
-      <%= link_to "Show this group", group_expenses_path(group.id) %>
-    </p>
   <% end %>
 </div>
+<div class="bg-success fixed-bottom p-2">
+<div class="border p-3 text-center fw-bolder"><%= link_to "Add New Category", new_group_path, class: "text-white text-decoration-none"%></div>
+</div>
 
-<%= link_to "New group", new_group_path %>
 
 </div>
