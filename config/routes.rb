@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  get 'home/index'
   root to: 'groups#index'
 
   resources :categories, controller: 'groups', as: 'groups'  do
