@@ -17,6 +17,10 @@
   </div>
 
   <div>
+    <%= form.text_field :group_id, :value => @group.name, disabled: true, class:"form-control py-3 mt-3" %>
+  </div>
+
+  <div>
     <%= form.submit "Save Expense", class: "btn btn-primary btn-lg mt-3" %>
   </div>
 <% end %>
