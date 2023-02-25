@@ -1,0 +1,8 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+  <%= link_to image_tag('back.png', alt: "back-arrow"), groups_path,  class: "px-2"%>
+  <h3 class="text-white p-3">Add Category</h3>
+  <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white fw-bold text-decoration-none p-3" %>
+</nav>
+
+<%= render "form", group: @group %>
+

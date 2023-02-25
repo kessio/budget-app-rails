@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  get 'test/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+resources :categories, controller: 'groups', as: 'groups'  do
+    resources :transactions, controller: 'expenses', as: 'expenses'
+  end
+ 
+  devise_for :users
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_scope :users do
+    authenticated :users do
+      root 'groups#index', as: :authenticated_user
+    end
+    unauthenticated do
+      root 'home#index', as: :unauthenticated_user
+    end
+  end
+  root 'groups#index'
 end
