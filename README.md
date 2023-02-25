@@ -46,7 +46,8 @@
 <p align="right"><a href="#readme-top">back to top</a></p>
 
 ### Demo
-You can visit our page [Demo Link]()
+This is our [Demo Link](https://budgeter-uk8t.onrender.com)
+Tis is [Demo video](https://www.loom.com/share/71292417d5f94fc292307e764d74b408)
 
 <!-- Features -->
 
