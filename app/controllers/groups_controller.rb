@@ -1,19 +1,16 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: %i[ show edit update destroy ]
+  before_action :set_group, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /groups or /groups.json
   def index
-    if user_signed_in?
-    @groups = if current_user
-            Group.where(author: current_user).order(created_at: :desc)
-    end
+    return unless user_signed_in?
+
+    @groups = (Group.where(author: current_user).order(created_at: :desc) if current_user)
   end
-end
 
   # GET /groups/1 or /groups/1.json
-  def show
-  end
+  def show; end
 
   # GET /groups/new
   def new
@@ -21,8 +18,7 @@ end
   end
 
   # GET /groups/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /groups or /groups.json
   def create
@@ -30,7 +26,7 @@ end
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to groups_url, notice: "Group was successfully created." }
+        format.html { redirect_to groups_url, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,19 +40,20 @@ end
     @group.destroy
 
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: "Group was successfully destroyed." }
+      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_group
-      @group = Group.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def group_params
-      params.require(:group).permit(:name, :icon).merge(author_id: current_user.id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def group_params
+    params.require(:group).permit(:name, :icon).merge(author_id: current_user.id)
+  end
 end

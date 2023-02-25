@@ -21,7 +21,7 @@ gem 'jsbundling-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
 
-#bootstrap
+# bootstrap
 gem 'bootstrap', '~> 5.1'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
@@ -36,7 +36,7 @@ gem 'jbuilder'
 # Devise for authentication
 gem 'devise'
 
-#cancancan for authorization
+# cancancan for authorization
 gem 'cancancan'
 
 
@@ -80,8 +80,8 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'faker'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'rspec-rails'
-  gem 'faker'
 end
