@@ -1,0 +1,30 @@
+<div class="container mt-5">
+<%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :name, placeholder: "Name", class:"form-control py-3"%>
+  </div>
+
+  <div>
+    <%= form.select :icon, options_for_select([['Select Icon', ''], ['Bills 💵', 'bill.png'], ['Health 🏥', 'hospital.png'],
+    ['Shopping 🛍️', 'shopping-bag.png'], ['Sports ⚽', 'sports.png'], ['Entertainment 🍿', 'entertainment.png'], ['Travel ✈️', 'transport.png'],
+    ['Others 📓', 'others.png']], selected: nil), { prompt: 'Icons', size: 16 }, class: 'form-select mt-2 mb-4 py-3'%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save category", class: "btn btn-primary btn-lg mt-3" %>
+  </div>
+<% end %>
+
+</div>
