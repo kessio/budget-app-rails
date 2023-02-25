@@ -5,8 +5,9 @@
 </nav>
 
 <p style="color: green"><%= notice %></p>
-<div class="col-12 bg-white py-4 shadow-sm rounded">
-<span>Total:</span><span>$500</span>
+<div class="col-12 d-flex justify-content-between bg-white py-4 px-2 mt-3 shadow-sm rounded">
+<div class="fw-bolder">Totals</div>
+<div class="fw-bolder">$<%= @group.total%>0</div>
 </div>
 <div class="container mt-5">
 <div id="expense">
@@ -17,7 +18,7 @@
     </div>
   
     <div class="fw-bolder">
-    $<%= expense.amount %>
+    $<%= expense.amount %>0
   </div>
     </div>
   <% end %>
