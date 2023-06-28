@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
+gem 'rails', '~> 7.0.5', '>= 7.0.5.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -16,10 +16,10 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem 'jsbundling-rails'
+gem 'jsbundling-rails', '>= 1.1.2'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
+gem 'turbo-rails', '>= 1.4.0'
 
 # bootstrap
 gem 'bootstrap', '~> 5.1'
@@ -27,14 +27,14 @@ gem 'bootstrap', '~> 5.1'
 gem 'stimulus-rails'
 
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
-gem 'cssbundling-rails'
+gem 'cssbundling-rails', '>= 1.2.0'
 gem 'sassc'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
 # Devise for authentication
-gem 'devise'
+gem 'devise', '>= 4.9.1'
 
 # cancancan for authorization
 gem 'cancancan'
@@ -80,7 +80,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'faker'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 6.0.2'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
