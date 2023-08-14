@@ -22,7 +22,7 @@ gem 'jsbundling-rails'
 gem 'turbo-rails'
 
 # bootstrap
-gem 'bootstrap', '~> 5.1'
+gem 'bootstrap', '~> 5.3', '>= 5.3.0'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
