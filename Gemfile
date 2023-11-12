@@ -16,25 +16,25 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem 'jsbundling-rails'
+gem 'jsbundling-rails', '>= 1.1.2'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
+gem 'turbo-rails', '>= 1.4.0'
 
 # bootstrap
 gem 'bootstrap', '~> 5.1'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'stimulus-rails'
+gem 'stimulus-rails', '>= 1.2.2'
 
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
-gem 'cssbundling-rails'
+gem 'cssbundling-rails', '>= 1.2.0'
 gem 'sassc'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
 # Devise for authentication
-gem 'devise'
+gem 'devise', '>= 4.9.1'
 
 # cancancan for authorization
 gem 'cancancan'
@@ -67,7 +67,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
+  gem 'web-console', '>= 4.2.1'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -80,7 +80,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'faker'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 6.0.2'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
