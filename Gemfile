@@ -31,7 +31,7 @@ gem 'cssbundling-rails'
 gem 'sassc'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem 'jbuilder'
+gem 'jbuilder', '>= 2.12.0'
 
 # Devise for authentication
 gem 'devise'
