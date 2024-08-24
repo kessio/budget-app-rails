@@ -81,6 +81,6 @@ group :test do
   gem 'capybara'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'selenium-webdriver', '>= 4.8.2'
+  gem 'webdrivers', '>= 5.3.0'
 end
