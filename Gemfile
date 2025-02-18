@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
+gem 'rails', '~> 7.2.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -22,7 +22,7 @@ gem 'jsbundling-rails'
 gem 'turbo-rails'
 
 # bootstrap
-gem 'bootstrap', '~> 5.1'
+gem 'bootstrap', '~> 5.3', '>= 5.3.2'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
